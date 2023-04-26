@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="277cf70f3977419bbd2f2f49bf37d648" Name="Diagram1">
+        <EntityTypeShape EntityType="Robotov.NETModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Robotov.NETModel.Группы" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Robotov.NETModel.Занятие" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Robotov.NETModel.Курс" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Robotov.NETModel.Преподаватели" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Robotov.NETModel.Префикс" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Robotov.NETModel.Пропуски" Width="1.5" PointX="9.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Robotov.NETModel.Специальность" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="Robotov.NETModel.Статус" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Robotov.NETModel.СтудентаСтатус" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Robotov.NETModel.Студенты" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Robotov.NETModel.Фотографии" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="Robotov.NETModel.FK_Группы_Курс" ManuallyRouted="false" />
+        <AssociationConnector Association="Robotov.NETModel.FK_Группы_Преподаватели" ManuallyRouted="false" />
+        <AssociationConnector Association="Robotov.NETModel.FK_Группы_Префикс" ManuallyRouted="false" />
+        <AssociationConnector Association="Robotov.NETModel.FK_Группы_Специальность" ManuallyRouted="false" />
+        <AssociationConnector Association="Robotov.NETModel.FK_Студенты_Группы" ManuallyRouted="false" />
+        <AssociationConnector Association="Robotov.NETModel.FK_Пропуски_Занятие" ManuallyRouted="false" />
+        <AssociationConnector Association="Robotov.NETModel.FK_Преподаватели_Фотографии" ManuallyRouted="false" />
+        <AssociationConnector Association="Robotov.NETModel.FK_Пропуски_Студенты" ManuallyRouted="false" />
+        <AssociationConnector Association="Robotov.NETModel.FK_Студенты_СтудентаСтатус" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
