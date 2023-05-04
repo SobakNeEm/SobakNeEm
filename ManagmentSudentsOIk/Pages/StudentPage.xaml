@@ -1,0 +1,107 @@
+﻿<Page x:Class="ManagmentSudentsOIk.Pages.StudentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ManagmentSudentsOIk.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="900"
+      Title="StudentPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid  Grid.ColumnSpan="3" x:Name="dgStudent" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Фамилия}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Имя}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Отчество}"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding СтудентаСтатус}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TabControl Grid.Row="1">
+            <TabItem Header="Новый">
+                <Border BorderBrush="Black" BorderThickness="2">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Фамилия"/>
+                            <TextBox Width="230" Margin="1 0 0 0" x:Name="tbAddFamily"/>
+                           
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Имя"/>
+                            <TextBox Width="230" Margin="27 0 0 0" x:Name="tbAddName"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Отчество"/>
+                            <TextBox Width="230" Margin="0 0 0 0" x:Name="tbAddOtche"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Статус"/>
+                            <ComboBox Width="230" Margin="16 0 0 0" x:Name="cbAddStatus"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Дата рождения"/>
+                            <DatePicker Width="180" Margin="16 0 0 0" x:Name="tbAddDate"/>
+                        </StackPanel>
+                        <Button Content="Добавить" Width="150" Margin="0 20 0 0" Click="Button_Click"/>
+                    </StackPanel>
+                </Border>
+            </TabItem>
+            <TabItem Header="Существующий">
+                <Border BorderBrush="Black" BorderThickness="2">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Фамилия"/>
+                            <TextBox Width="230" Margin="1 0 0 0" x:Name="tbSearchFamily"/>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Имя"/>
+                            <TextBox Width="230" Margin="27 0 0 0" x:Name="tbSearchName"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Отчество"/>
+                            <TextBox Width="230" x:Name="tbSearchOtche"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Статус"/>
+                            <ComboBox Width="230" DisplayMemberPath="СтудентаСтатус" SelectedItem="{Binding СтатусСтудента}" Margin="16 0 0 0" x:Name="cbSearchStatus"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Дата рождения"/>
+                            <DatePicker Width="180" Margin="16 0 0 0" x:Name="tbSearchDate"/>
+                        </StackPanel>
+                        <Button Content="Найти" Width="150" Margin="0 20 0 0" Click="Button_Click_1"/>
+                    </StackPanel>
+                </Border>
+            </TabItem>
+        </TabControl>
+        <DataGrid x:Name="dgPropuski" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Пропуски" Binding="{Binding ЗанятиеId}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="2">
+            <StackPanel Margin="10">
+                <Button Content="Удалить" Height="40"/>
+                <Button Content="Редактировать" Height="40" Margin="0 30 0 30"/>
+                <Button Content="Придумать" Height="40"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
